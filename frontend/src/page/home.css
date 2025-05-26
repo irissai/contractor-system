@@ -1,0 +1,414 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* ซ่อน Sidebar เดิมบนมือถือ */
+
+
+@media (min-width: 769px) {
+  .sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: calc(100vh - 70px); 
+    width: 14vw;
+    background-color: #f0f0f0;
+    padding: 0.1rem;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    z-index: 998;
+    transition: width 0.3s ease;
+  }
+  .container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 40px;
+  margin-left: 14vw; /* สำหรับ desktop */
+}
+}
+
+
+
+
+@media (max-width: 576px) {
+    table {
+   font-size: 12px !important;
+  }
+  .installment-header h1 {
+   font-size: 22px !important;
+}
+.project-card h3 {
+  font-size: 14px !important;
+}
+
+#project-info p {
+  font-size: 12px !important;
+}
+
+#project-info span {
+ font-size: 12px !important;
+}
+.phase-box h4 {
+  font-size: 12px !important;
+}
+.main-content{
+      padding: 30px 10px !important;
+  }
+  #taskTable {
+    font-size: 11px !important;
+  }
+}
+
+ @media (min-width: 576px) and (max-width: 768px) {
+.installment-header h1 {
+   font-size: 24px !important;
+}
+.project-card h3 {
+  font-size: 15px !important;
+}
+
+#project-info p {
+  font-size: 14px !important;
+}
+
+#project-info span {
+ font-size: 14px !important;
+}
+.phase-box h4 {
+  font-size: 14px !important;
+}
+ }
+
+@media (max-width: 992px) {
+    .desktop-sidebar {
+    display: none !important;
+  }
+   .container {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-left: 0 !important;
+    padding: 20px !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+    /* table {
+    display: block !important;
+    overflow-x: auto !important;
+  } */
+  /* .main-content{
+        padding: 30px 20px !important;
+  } */
+}
+@media (max-width: 768px) {
+  
+
+  .project-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+ 
+svg .circle-home {
+  r: 13 !important;
+}
+svg text {
+  font-size: 5px !important; 
+}
+.tb-cl {
+  gap: 0 !important;
+}
+.t-progress {
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+}
+.nav-list li a {
+    font-size: 14px !important;
+}
+.nav-list li.active, .nav-list li a.active {
+    font-size: 14px;
+}
+.td-home{
+  padding: 6px 10px !important;
+}
+
+}
+
+ @media (min-width: 768px) and (max-width: 1400px) {
+ /* .container {
+    flex-direction: column !important;
+      padding: 15px !important;
+  } */
+    /* table {
+    display: block !important;
+    overflow-x: auto !important;
+  } */
+  .project-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+svg .circle-home {
+  r: 14 !important;
+}
+svg text {
+  font-size: 6px !important; 
+}
+.tb-cl {
+  gap: 0 !important;
+}
+.nav-list li a {
+    font-size: 14px !important;
+}
+.nav-list li.active, .nav-list li a.active {
+    font-size: 14px;
+}
+ }
+@media (max-width: 992px) {
+
+}
+
+.main-content {
+  flex: 1;
+  background-color: #fff;
+}
+
+ 
+.main-content h1 {
+ text-align: center;
+  font-weight: 400;
+}
+
+.main-content h3 {
+    margin-top: 30px;
+  font-weight: 500;
+}
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td  {
+      border: 1px solid #DDDDDD;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    .taskName {
+        text-align: start;
+    }
+
+    #project-info p {
+        font-size: 18px;
+margin: 8px 0;
+ font-weight: 600;
+    }
+
+        #project-info p span{
+ font-weight: normal;
+    }
+
+    #taskTable {
+        margin: 0;
+    }
+
+    thead tr th {
+    
+        font-weight: 600;
+    }
+
+    .percent-input {
+  position: relative;
+  width: 100%;
+}
+
+
+.percent-input::after {
+  content: "%";
+  position: absolute;
+  font-size: 12px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a7a7a;
+  pointer-events: none;
+}
+.project-card, .phase-box {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.phase-box > div {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .phase-box > div {
+    flex-direction: row !important;
+  }
+}
+
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 25px;
+  padding: 24px;
+}
+
+.installment-header h1 {
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+#project-info {
+  font-size: 18px;
+  color: #475569;
+}
+
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#project-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+#project-info span {
+  font-weight: 600;
+  color: #222;
+}
+
+#taskTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#taskTable thead {
+  background-color: #f7f7f7;
+}
+
+#taskTable td.taskName {
+  text-align: left;
+}
+
+#taskTable input[type="number"] {
+  /* border: 1px solid #ccc; */
+  border-radius: 6px;
+  padding: 4px;
+  width: 60px;
+  font-size: 0.9rem;
+}
+
+#taskTable input[type="number"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.total-cell {
+  background-color: #eaf4ff;
+  color: #0a58ca;
+   display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-align: center;
+  min-width: 90px;
+  border: 1px solid #0a58ca;
+  /* display: inline-block; */
+}
+
+.circular-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress {
+  width: 50px;
+  height: 50px;
+  /* transform: rotate(-90deg); */
+  margin-bottom: 4px;
+}
+
+.circle-bg {
+  stroke: #eee;
+}
+
+.circle {
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.percentage-text {
+  dominant-baseline: middle;
+  font-weight: bold;
+}
+
+.total-value {
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+.circular-progress path.circle {
+  transition: stroke-dasharray 0.5s ease;
+  stroke-linecap: round;
+}
+
+.circular-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+ 
+input[type=number] {
+   width: 100%;
+  max-width: 80px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  /* border: 1px solid #ccc; */
+  font-size: 14px;
+  text-align: center;
+}
+input[type=number]:focus {
+  outline: none;
+  border-color: #3b8aff;
+  box-shadow: 0 0 5px #3b89ff34;
+}
+
+/* .installment-card-home { */
+  /* background: #ffffff; */
+  /* padding: 2.5rem; */
+  /* border-radius: 24px; */
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); */
+/* } */
+.installment-wrapper-home {
+  width: 100%;
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+.installment-card-home {
+  will-change: opacity;
+  /* หรือ */
+  transform: translateZ(0);
+}
+ 

@@ -1,0 +1,103 @@
+.project-select-wrapper-select {
+  margin: 0;
+  /* background: linear-gradient(to bottom right, #e0f2fe, #fefce8); */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.project-select-container {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(97, 97, 97, 0.308);
+  text-align: center;
+  justify-content: center;
+}
+
+.project-select-container h1 {
+  color: #3e3e3e;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size:20px
+}
+
+.project-select-form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+  text-align: left;
+}
+
+.project-select-form label {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.project-select-form select,
+.project-select-form input[type="text"] {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-select-form select:focus,
+.project-select-form input[type="text"]:focus {
+  border-color: #414141;
+  box-shadow: 0 0 0 3px rgba(185, 182, 175, 0.2);
+  outline: none;
+  background-color: #f0f9ff;
+}
+
+.project-input {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  margin-top: 8px;
+  padding: 12px;
+  background: linear-gradient(to right, #434343, #2c2202);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-shadow: 0 0 0 3px rgba(185, 182, 175, 0.2);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px rgba(185, 182, 175, 0.2);
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+#projectDropdown {
+  margin-bottom: 1rem;
+}
+
+#workTypeCheckboxes {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+@media (max-width: 576px) {
+  .project-select-container{
+    max-width: 330px !important;
+  }
+}
