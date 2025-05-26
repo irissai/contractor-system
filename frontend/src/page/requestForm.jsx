@@ -13,7 +13,7 @@ import Stack from '@mui/material/Stack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { motion } from "framer-motion"; // <-- import
 import HamburgerMenu from "../navbar/MHamburgerMenu";
-
+import BASE_URL from "../config/api";
 
 
 const workItems = [
@@ -62,9 +62,7 @@ export default function RequestForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log("sending phase:", selectedTask.phase);
-                  // const response = await axios.put(`https://contractor-6j0k.onrender.com/api/task/update-status`, {
-      const response = await axios.put(`http://localhost:3000/api/task/update-status`, {
+      const response = await axios.put(`${BASE_URL}/api/task/update-status`, {
         phase: selectedTask.phase,
         name: selectedTask.name,
         newStatus: "กำลังดำเนินงาน",

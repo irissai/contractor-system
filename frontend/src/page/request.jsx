@@ -3,9 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../navbar/LeftNavbar";
 import TopNavbar from "../navbar/TopNavbar";
-import { motion } from "framer-motion"; // <-- import
+import { motion } from "framer-motion";  
 import HamburgerMenu from "../navbar/MHamburgerMenu";
-
+import BASE_URL from "../config/api";
 
 const ProjectOverview = () => {
   const [tasks, setTasks] = useState([]);
@@ -18,8 +18,7 @@ const ProjectOverview = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // axios.get("https://contractor-6j0k.onrender.com/api/task/")
-    axios.get("http://localhost:3000/api/task/")
+    axios.get(`${BASE_URL}/api/task/`)
       .then(response => {
         const data = response.data;
         let allTasks = [];

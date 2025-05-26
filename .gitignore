@@ -1,5 +1,0 @@
-# ไม่เอาโฟลเดอร์ node_modules
-node_modules/
-
-# ไม่เอาไฟล์ .env
-.env

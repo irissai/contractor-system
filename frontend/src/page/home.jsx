@@ -3,8 +3,9 @@ import axios from "axios";
 import "./home.css";
 import Navbar from "../navbar/LeftNavbar";
 import TopNavbar from "../navbar/TopNavbar";
-import { motion } from "framer-motion"; // <-- import
+import { motion } from "framer-motion"; 
 import HamburgerMenu from "../navbar/MHamburgerMenu";
+import BASE_URL from "../config/api";
 
 const ProjectOverview = () => {
   const [tasks, setTasks] = useState([]);
@@ -19,8 +20,7 @@ const ProjectOverview = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // axios.get("https://contractor-6j0k.onrender.com/api/task/").then((response) => {
-    axios.get("http://localhost:3000/api/task/").then((response) => {
+    axios.get(`${BASE_URL}/api/task/`).then((response) => {
       const data = response.data;
       let allTasks = [], percentArr = [];
       data.forEach((phaseObj) => {
@@ -48,7 +48,6 @@ const ProjectOverview = () => {
     newPercentValues[index] = numValue;
     setPercentValues(newPercentValues);
     const task = tasks[index];
-    // axios.patch("https://contractor-6j0k.onrender.com/api/task/update-percent", {
     axios.patch("http://localhost:3000/api/task/update-percent", {
       phase: task.phase,
       taskName: task.name,

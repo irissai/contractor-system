@@ -11,7 +11,7 @@ import { Snackbar, Alert } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Typography, Box, Input } from "@mui/material";
 import { motion } from "framer-motion";
 import HamburgerMenu from "../navbar/MHamburgerMenu";
-
+import BASE_URL from "../config/api";
 
 const AttachDocuments = () => {
   const navigate = useNavigate();
@@ -62,8 +62,7 @@ const AttachDocuments = () => {
     });
 
     try {
-      // await axios.post("https://contractor-6j0k.onrender.com/api/task/upload-documents", formData, {
-      await axios.post("http://localhost:3000/api/task/upload-documents", formData, {
+      await axios.post(`${BASE_URL}/api/task/upload-documents`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
