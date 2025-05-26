@@ -48,7 +48,7 @@ const ProjectOverview = () => {
     newPercentValues[index] = numValue;
     setPercentValues(newPercentValues);
     const task = tasks[index];
-    axios.patch("http://localhost:3000/api/task/update-percent", {
+    axios.patch(`${BASE_URL}/api/task/update-percen`, {
       phase: task.phase,
       taskName: task.name,
       percent: numValue,
