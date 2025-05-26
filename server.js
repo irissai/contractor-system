@@ -14,7 +14,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://contractor-6j0k.onrender.com"
+    "https://contractor-6j0k.onrender.com",
+    "https://contractor-system.onrender.com"
   ],
   credentials: true
 }));
