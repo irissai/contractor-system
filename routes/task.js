@@ -57,7 +57,7 @@ router.post('/upload-documents', upload.array('documents'), async (req, res) => 
           {
             $push: {
               documents: {
-                type: "pdf", // หรือ type อื่น ๆ ถ้ามีข้อมูล
+                type: "pdf",
                 label: label,
                 multiple: false,
                 files: [{
@@ -139,7 +139,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ✅ ดึงเฉพาะ documents ของ phase ที่ระบุ
+//  ดึงเฉพาะ documents ของ phase ที่ระบุ
 router.get("/documents/:phase", async (req, res) => {
   try {
     const phaseNum = Number(req.params.phase);
