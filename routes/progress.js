@@ -6,7 +6,7 @@ const Progress = require('../models/Progress');
 
 const router = express.Router();
 
-// ✅ ตั้งค่า multer storage สำหรับ pdf และ image
+//  ตั้งค่า multer storage สำหรับ pdf และ image
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (file.fieldname === 'pdf') {
@@ -23,10 +23,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 10 * 1024 * 1024 } // 10MB max
+  limits: { fileSize: 10 * 1024 * 1024 } 
 });
 
-// ✅ POST /api/progress - เพิ่ม progress ใหม่
+//  POST /api/progress 
 router.post(
   '/',
   authenticateToken,
@@ -88,7 +88,7 @@ router.post('/:id/inspection-request', async (req, res) => {
 });
 
 
-// ✅ GET /api/progress - ดึง progress ทั้งหมดของ contractor คนนั้น
+//  GET /api/progress - ดึง progress ทั้งหมดของ contractor คนนั้น
 router.get('/', authenticateToken, async (req, res) => {
   try {
     const progresses = await Progress.find({ contractorId: req.user._id }).sort({ createdAt: -1 });
