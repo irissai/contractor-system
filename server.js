@@ -27,7 +27,7 @@ app.use('/api/progress', progressRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/task', tasksRouter);
 // app.use('/api/request', requestsRouter);
-app.use('/public', express.static('public')); // ให้โหลดไฟล์ PDF, รูปได้
+app.use('/public', express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'login.html'));
@@ -58,7 +58,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true
 })
 .then(() => {
-  console.log('✅ Connected to MongoDB');
-  app.listen(3000, () => console.log('🚀 Server running at http://localhost:3000'));
+  console.log('Connected to MongoDB');
+  app.listen(3000, () => console.log('Server running at http://localhost:3000'));
 })
-.catch(err => console.error('❌ MongoDB connection error:', err));
+.catch(err => console.error('MongoDB connection error:', err));
