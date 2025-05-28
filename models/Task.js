@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const nameSchema = new mongoose.Schema({
  name: { type: String, required: true },
   weight: { type: Number, required: true },
-  percent: { type: Number, default: 0 }, // ✅ ใหม่
+  percent: { type: Number, default: 0 }, 
   status: { type: String, default: '' },
-  calculatedValue: { type: Number, default: 0 } // ✅ (weight * percent) / 100
+  calculatedValue: { type: Number, default: 0 } //  (weight * percent) / 100
 });
 
 const documentSchema = new mongoose.Schema({
-  type: { type: String, required: true },       // pdf หรือ images
-  label: { type: String, required: true },      // เช่น "แบบแปลน"
+  type: { type: String, required: true },    
+  label: { type: String, required: true },    
   multiple: { type: Boolean, default: false },
   files: [
     {
@@ -26,7 +26,7 @@ const documentSchema = new mongoose.Schema({
 const taskSchema = new mongoose.Schema({
   phase: { type: Number, required: true },
   tasks: [nameSchema],
-  documents: [documentSchema] // ✅ เพิ่มเอกสารในแต่ละ phase
+  documents: [documentSchema] //  เพิ่มเอกสารในแต่ละ phase
 });
 
 module.exports = mongoose.model('Task', taskSchema);
