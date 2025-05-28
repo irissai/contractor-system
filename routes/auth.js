@@ -15,7 +15,7 @@ function authMiddleware(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // { userId, username, role, iat, exp }
+    req.user = decoded; 
     next();
   } catch (err) {
     res.status(401).json({ error: 'Invalid token' });
@@ -23,7 +23,7 @@ function authMiddleware(req, res, next) {
 }
 
 
-// ✅ Register
+//  Register
 function toISODate(dmy) {
   const [day, month, year] = dmy.split(/[-\/]/);
   return new Date(`${year}-${month}-${day}`);
@@ -38,7 +38,7 @@ const authenticateToken = (req, res, next) => {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, userData) => {
     if (err) return res.status(403).json({ error: 'Invalid token' });
-    req.user = userData; // userId, username, role จาก token payload
+    req.user = userData; 
     next();
   });
 };
@@ -62,7 +62,7 @@ router.get('/projects', authenticateToken, async (req, res) => {
 router.get('/me', authMiddleware, async (req, res) => {
   try {
     const userId = req.user.userId;
-    const user = await User.findById(userId).select('-password'); // ตัด password ออก
+    const user = await User.findById(userId).select('-password'); 
     if (!user) return res.status(404).json({ error: 'User not found' });
 
     res.json(user);
@@ -112,7 +112,7 @@ router.post('/register', async (req, res) => {
 
 
 
-// ✅ Login
+//  Login
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
